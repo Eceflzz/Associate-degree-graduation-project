@@ -1,0 +1,253 @@
+/* Genel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0e0115, #571583);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+}
+
+/* Back button */
+.back-button {
+    background: linear-gradient(to right, #000000, #290433);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #431650, #994caf);
+}
+
+/* Baloncuk stili */
+.bubble {
+    background: #8562d0;
+    border-radius: 50%;
+    width: 150px;
+    padding: 35px 58px;
+    margin: 9em 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 50%;
+    text-shadow: 0 -0.05em 0.1em rgba(0,0,0,.3);
+    position: relative;
+    margin: 4em auto; 
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #8562d0;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+}
+
+.favorite-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3;
+    z-index: 10;
+}
+
+.favorite-icon:hover{
+    color: #ca73ed;
+}
+
+/* Görsellerin boyutu */
+.recommendation-image {
+    width: 80%;              /* Bulunduğu container'ın tamamını kaplar */
+    height: auto;             /* Orantılı bir şekilde yüksekliği ayarlar */
+    object-fit: cover;        /* Görselin taşmasını engeller */
+    border-radius: 10px; 
+    display: block;     
+    margin-bottom: 20px;
+}
+
+/* Görselin yer aldığı öğe */
+.recommendation-item {
+    position: relative;
+    width: 100%;              /* İsteğe bağlı: container'ın genişliği kadar */
+    max-width: 300px;         /* İsteğe bağlı: en fazla 400px genişliğe izin verir */
+    margin: auto;             /* Ortalamak için */
+}
+
+
+/* Form elemanları ve butonlar için stil */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    background: linear-gradient(to right, #1a0422, #ca73ed);
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 300px;
+    margin-bottom: 8px;
+    box-shadow: 0 8px 16px rgba(115, 1, 255, 0.367);
+    transition: transform 0.3s, background 0.8s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #431650, #994caf);
+}
+
+/* No Suggestions Sayfası */
+.no-suggestions-container {
+    background: linear-gradient(to right, #6a4caf, #f0c7d7);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    border: 5px solid #ca73ed;
+}
+
+/* Başlık ve mesaj stil */
+.no-suggestions-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Mesajın açıklaması */
+.no-suggestions-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.no-suggestions-container button {
+    background: linear-gradient(to right, #431650, #530c67);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 20px;
+}
+
+/* "Geri Dön" butonunun stili */
+.home-button {
+    background: linear-gradient(to left, #000000, #290433);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #431650, #994caf);
+}
+
+.retry-button {
+    background: linear-gradient(to left, #000000, #290433);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 30px;
+}
+
+.retry-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #431650, #994caf);
+}
+
+.retry-button:active {
+    transform: scale(0.98); /* Butona tıklandığında küçülme efekti */
+}
+
+.favorite-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px; /* Adjust the size to make it small */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e07ad4;
+    z-index: 10;
+}
+
+.favorite-button:focus {
+    outline: none;
+
+}
+
+.favorite-button:hover{
+    color: #e647ff;
+}
+/* Butonlar için grup düzeni */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Butonlar arasında boşluk */
+    margin-top: 30px; /* Tüm grup için üst boşluk */
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .no-suggestions-container {
+        padding: 30px;
+    }
+    
+    .no-suggestions-container button,
+    .back-button {
+        width: 100%;
+    }
+}

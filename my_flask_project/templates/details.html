@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ item.title }} - Detaylar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="recommendation-area">
+        <div class="details">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="loadNewRecommendations('{{ mood }}', '{{ category }}')">Başka Göster</button>
+        <a href="{{ url_for('category_page', mood=mood) }}">
+            <button>Geri dön</button>
+        </a>
+    </div>
+
+    <script>
+        // Bu fonksiyon yeni öneri yüklemek için fetch kullanıyor
+        function loadNewRecommendations(mood, category) {
+            fetch(`/next_recommendation/${mood}/${category}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Sunucudan veri alınamadı.');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Öneri kısmını güncelliyoruz
+                    document.getElementById("recommendation-area").innerHTML = html;
+                })
+                .catch(error => {
+                    alert("Bir hata oluştu: " + error.message);
+                });
+        }
+    </script>
+</body>
+</html>

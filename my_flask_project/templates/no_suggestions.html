@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öneri YOK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="no-suggestions-container">
+        <h2>Son Öneriyi Gördünüz</h2>
+        <p>Bütün Önerileri gördünüz hadi şimdi diğer kategorilere bakma zamanı.</p>
+        <a href="{{ url_for('mood_page') }}">
+            <button>Başa Dön</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RUH HALİNİZİ SEÇİNİZ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>RUH HALİNİZİ SEÇİNİZ</h2>
+    <form action="{{ url_for('category_page', mood='MUTLU') }}" method="POST">
+        <button type="submit">MUTLU</button>
+    </form>
+    <form action="{{ url_for('category_page', mood='ÜZGÜN') }}" method="POST">
+        <button type="submit">ÜZGÜN</button>
+    </form>
+    <form action="{{ url_for('category_page', mood='AŞIK') }}" method="POST">
+        <button type="submit">AŞIK</button>
+    </form>
+    <form action="{{ url_for('category_page', mood='ENERJİK') }}" method="POST">
+        <button type="submit">ENERJİK</button>
+    </form>
+    <form action="{{ url_for('category_page', mood='KORKU') }}" method="POST">
+        <button type="submit">KORKU</button>
+    </form>
+
+    <form action="{{ url_for('favorites') }}" method="GET">
+    <button type="submit" class="back-button">Favorilerim</button>
+    </form>
+
+    <form action="{{ url_for('login') }}">
+        <button class="back-button">Giriş sayfası</button>
+    </form>
+    
+
+    <button onclick="history.back()" class="home-button">GERİ DÖN</button>
+</body>
+</html>

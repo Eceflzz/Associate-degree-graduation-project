@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öneriler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="recommendation-container">
+        <h1>Ruh Hali: {{ mood }}</h1>
+        <h2>Kategoriniz: {{ category | capitalize }}</h2>
+        
+        <div class="recommendation-item">
+            <!-- Dinamik item_id ve category geçirme -->
+            <span class="favorite-icon" 
+                  onclick="toggleFavorite(this, '{{ recommendation['id'] }}', '{{ category }}')">🤍</span>
+            
+            <img src="{{ url_for('static', filename='images/' + (recommendation['image'] if recommendation['image'] else 'default.jpg')) }}" 
+                 alt="{{ recommendation['title'] }}" class="recommendation-image">
+            
+            <div class="recommendation-details">
+                <h3>{{ recommendation['title'] }}</h3>
+                <p>{{ recommendation['name'] }}</p>
+                <p>{{ recommendation['description'] }}</p>
+            </div>
+        </div>
+    </div>
+    
+        
+
+        <!-- Butonları ortak kapsayıcıya aldık -->
+        <div class="button-group">
+            <a href="{{ url_for('retry_page', mood=mood, category=category) }}" class="retry-button">Değiştir</a>
+
+            <form action="{{ url_for('mood_page') }}">
+                <button class="back-button">Geri Dön</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

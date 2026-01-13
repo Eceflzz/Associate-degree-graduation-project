@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÜYE OL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="KULLANICI ADI" required>
+        <input type="password" name="password" placeholder="ŞİFRE" required>
+        <input type="email" id="email" placeholder="EMAİL" required>
+        <button type="submit"> ÜYE OL </button>
+    </form>
+
+    <p style="margin-top: 15px;">Zaten bir hesabınız var mı?
+        <a href="{{ url_for('login') }}">Giriş yap</a>
+    </p>
+</body>
+</html>

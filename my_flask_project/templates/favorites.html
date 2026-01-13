@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorileriniz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+    <h1>Favorileriniz</h1>
+    <div class="favorites-container">
+        {% for item in favorites %}
+            <div class="favorite-item">
+                <img src="{{ url_for('static', filename='images/' ~ item['image']) }}" alt="{{ item['title'] }}">
+                <h3>{{ item['name'] }}</h3>
+                <p>{{ item['description'] }}</p>
+            </div>
+        {% endfor %}
+        
+    </div>
+    <form action="{{ url_for('mood_page') }}">
+        <button class="back-button"> Geri Dön</button>
+    </form>
+</body>
+</html>
